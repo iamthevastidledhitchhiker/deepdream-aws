@@ -11,12 +11,12 @@ open https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceW
 # Choose an existing key pair: reuse-elasticsearch.
 # Wait until fulfilled. Click on instance. Check public DNS.
 
-dns=ec2-54-158-172-169.compute-1.amazonaws.com
+dns=ec2-54-210-168-12.compute-1.amazonaws.com
 pem=~/.ssh/reuse-elasticsearch.pem
 # Don't forget to chmod go-rwx $pem
 
 # Change 'danielvarga' so that this points to your fork:
-ssh -i $pem ubuntu@$dns wget https://raw.githubusercontent.com/danielvarga/deepdream-aws/master/setup.sh
+ssh -i $pem ubuntu@$dns wget https://raw.githubusercontent.com/iamthevastidledhitchhiker/deepdream-aws/master/setup.sh
 # Also, in your fork, change the git SSH URL in setup.sh to point to your fork.
 
 ssh -i $pem ubuntu@$dns bash setup.sh
