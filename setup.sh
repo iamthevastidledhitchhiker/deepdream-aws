@@ -10,9 +10,9 @@ ln -s ~/caffe .
 wget http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel
 mv bvlc_googlenet.caffemodel caffe/models/bvlc_googlenet/
 
-# Get some input image:
-wget --output-document=daniel.png https://www.gravatar.com/avatar/17d651b2d4092b7810ae23d8d94b8cbd?s=640
-convert daniel.png daniel.jpg
+#
+#wget --output-document=daniel.png https://www.gravatar.com/avatar/17d651b2d4092b7810ae23d8d94b8cbd?s=640
+#convert daniel.png daniel.jpg
 
 # Run:
-nohup bash layers.sh daniel.jpg &
+#nohup bash layers.sh daniel.jpg &

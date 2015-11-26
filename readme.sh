@@ -1,5 +1,5 @@
 # According to http://blog.titocosta.com/post/110345699197/public-ec2-ami-with-torch-and-caffe-deep-learning
-open https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-ffba7b94
+#open https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-ffba7b94
 # pick g2.2xlarge
 # Request Spot Instances
 # Availability Zone: whichever is cheapest
@@ -11,9 +11,10 @@ open https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceW
 # Choose an existing key pair: reuse-elasticsearch.
 # Wait until fulfilled. Click on instance. Check public DNS.
 
-dns=ec2-54-210-168-12.compute-1.amazonaws.com
+dns=ec2-52-91-44-237.compute-1.amazonaws.com
 pem=~/.ssh/reuse-elasticsearch.pem
-# Don't forget to chmod go-rwx $pem
+# Don't forget to
+chmod go-rwx $pem
 
 # Change 'danielvarga' so that this points to your fork:
 ssh -i $pem ubuntu@$dns wget https://raw.githubusercontent.com/iamthevastidledhitchhiker/deepdream-aws/master/setup.sh
@@ -23,7 +24,7 @@ ssh -i $pem ubuntu@$dns bash setup.sh
 # ...wait some, and then:
 scp -i $pem ubuntu@$dns:./deepdream-aws/daniel.conv2-3x3_reduce.jpg .
 # ...wait a lot, and then:
-mkdir daniel
+mkdir iatvih
 scp -i $pem ubuntu@$dns:./deepdream-aws/daniel.*.jpg daniel/
 
 #####################
