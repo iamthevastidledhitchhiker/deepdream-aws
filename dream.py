@@ -120,8 +120,8 @@ def deepdream(net, base_img, iter_n=20, octave_n=4, octave_scale=1.4, end='incep
 def main():
     inImageFilename = sys.argv[1]
     base,ext = inImageFilename.rsplit(".",1)
-    end = sys.argv[2]
-    outImageFilename = ".".join((base, end.replace("/","-"), ext))
+    outImageFilename = sys.argv[2]
+    #end = sys.argv[3]
 
     img = np.float32(PIL.Image.open(inImageFilename))
     try:
@@ -151,7 +151,7 @@ def main():
     #net.set_channel_swap('data',(2,1,0))
     #net.set_mean('data', np.float32([104.0, 116.0, 122.0]))
 
-    vis = deepdream(net, img, iter_n=20, octave_n=4, end=end, mask_img=mask_img, filename=outImageFilename)
+    vis = deepdream(net, img, iter_n=10, octave_n=4, end='inception_4c/output', mask_img=mask_img, filename=outImageFilename)
     saveImage(vis, outImageFilename)
 
 main()
