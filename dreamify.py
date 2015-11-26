@@ -17,8 +17,8 @@ def savearray(a, filename, fmt='png'):
         #display(Image(data=f.getvalue()))
 
 model_path = 'caffe/models/bvlc_googlenet/' # substitute your path here
-    net_fn   = model_path + 'deploy.prototxt'
-    param_fn = model_path + 'bvlc_googlenet.caffemodel'
+net_fn   = model_path + 'deploy.prototxt'
+param_fn = model_path + 'bvlc_googlenet.caffemodel'
 
 # Patching model to be able to compute gradients.
 # Note that you can also manually add "force_backward: true" line to "deploy.prototxt".
