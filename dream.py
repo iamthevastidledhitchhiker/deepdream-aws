@@ -136,7 +136,7 @@ def main():
     else:
 	print "Mask file found, masking will be applied."
 
-    model_path = 'caffe/models/bvlc_googlenet/' # substitute your path here
+    model_path = '~/caffe/models/bvlc_googlenet/' # substitute your path here
     net_fn   = model_path + 'deploy.prototxt'
     param_fn = model_path + 'bvlc_googlenet.caffemodel'
 
@@ -144,7 +144,7 @@ def main():
     # Note that you can also manually add "force_backward: true" line to "deploy.prototxt".
     model = caffe.io.caffe_pb2.NetParameter()
     text_format.Merge(open(net_fn).read(), model)
-    model.force_backward = True
+    model.force_backward = False
     open('tmp.prototxt', 'w').write(str(model))
 
     net = caffe.Classifier('tmp.prototxt', param_fn)
