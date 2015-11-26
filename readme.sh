@@ -11,7 +11,7 @@
 # Choose an existing key pair: reuse-elasticsearch.
 # Wait until fulfilled. Click on instance. Check public DNS.
 
-dns=ec2-52-91-44-237.compute-1.amazonaws.com
+dns=ec2-52-91-94-227.compute-1.amazonaws.com
 pem=~/.ssh/reuse-elasticsearch.pem
 # Don't forget to
 chmod go-rwx $pem
@@ -23,12 +23,14 @@ ssh -i $pem ubuntu@$dns wget https://raw.githubusercontent.com/iamthevastidledhi
 #Connect to check files
 ssh -i $pem ubuntu@$dns
 
-ssh -i $pem ubuntu@$dns bash setup.sh
+bash setup.sh
 # ...wait some, and then:
+scp -i $pem setup_cluster.sh ubuntu@$dns:./
+scp username@b:/path/to/file /path/to/destination
 scp -i $pem ubuntu@$dns:./deepdream-aws/daniel.conv2-3x3_reduce.jpg .
 # ...wait a lot, and then:
 mkdir iatvih
-scp -i $pem ubuntu@$dns:./deepdream-aws/daniel.*.jpg daniel/
+scp -i $pem ubuntu@$dns:./deepdream-aws/daniel.*.jpg iatvih
 
 #####################
 
