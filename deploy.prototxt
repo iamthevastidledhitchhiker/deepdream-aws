@@ -1,6 +1,6 @@
 name: "CaffeNet"
-input: "data
-force_backward: true 
+input: "data"
+force_backward: True 
 input_shape {
   dim: 10
   dim: 3
