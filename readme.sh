@@ -25,7 +25,7 @@ ssh -i $pem ubuntu@$dns
 
 bash setup.sh
 # ...wait some, and then:
-scp -i $pem setup_cluster.sh ubuntu@$dns:./
+scp -i $pem deploy.prototect ubuntu@$dns:./caffe/models/bvlc_googlenet/
 scp username@b:/path/to/file /path/to/destination
 scp -i $pem ubuntu@$dns:./deepdream-aws/daniel.conv2-3x3_reduce.jpg .
 # ...wait a lot, and then:
