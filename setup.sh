@@ -1,7 +1,7 @@
 set -e
 
 # Disable camera, we don't have any:
-sudo ln /dev/null /dev/raw1394
+#sudo ln /dev/null /dev/raw1394
 
 git clone git@github.com:iamthevastidledhitchhiker/deepdream-aws.git
 cd deepdream-aws

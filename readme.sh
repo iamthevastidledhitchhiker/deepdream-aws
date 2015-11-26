@@ -20,6 +20,9 @@ chmod go-rwx $pem
 ssh -i $pem ubuntu@$dns wget https://raw.githubusercontent.com/iamthevastidledhitchhiker/deepdream-aws/master/setup.sh
 # Also, in your fork, change the git SSH URL in setup.sh to point to your fork.
 
+#Connect to check files
+ssh -i $pem ubuntu@$dns
+
 ssh -i $pem ubuntu@$dns bash setup.sh
 # ...wait some, and then:
 scp -i $pem ubuntu@$dns:./deepdream-aws/daniel.conv2-3x3_reduce.jpg .
